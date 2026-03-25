@@ -1,0 +1,164 @@
+
+:root {
+  /* Primary (Black) */
+  --color-primary: #0b0b0f;
+
+  /* Secondary (Verdone) */
+  --color-accent: rgb(50, 255, 47);
+
+  --color-secondary:rgba(50, 255, 47, 0.63);
+
+}
+
+
+/* TEXT COLORS */
+
+.text-p {
+  color: var(--color-primary);
+}
+
+.text-a {
+  color: var(--color-accent);
+}
+
+
+/* BACKGROUND COLORS */
+
+.bg-p {
+  background-color: var(--color-primary);
+}
+
+.bg-a {
+  background-color: var(--color-accent);
+}
+
+.bg-s {
+  background-color: var(--color-secondary);
+}
+
+
+
+/* FONT */
+
+.font-p {
+  font-family: "Play", sans-serif;
+}
+
+.bg-img {
+  background-image: url('./assets/bg-finance.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* CARD */
+
+.my-card {
+  /* background-color: transparent; */
+  background-color: var(--color-accent);
+  background-color: rgba(50, 255, 47, 0.63);
+  border-radius: 20px;
+  height: 180px;
+  border: 3px solid;
+  /* background-color: white; */
+}
+
+.icon-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: white;
+  border: 2px solid;
+
+}
+
+/* FILTRI */
+
+.my-input{
+  width: 25%;
+}
+
+@media (max-width: 767.98px) {
+  .my-input{
+  width: 75%;
+}
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* vh-100 */
+  z-index: 1000;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+@media (max-width: 767.98px) {
+  /* Overlay visibile solo quando aperta */
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.737);
+    z-index: 900; /* sotto la sidebar */
+  }
+}
+
+/* TABELLE */
+
+@media (max-width: 767.98px) {
+
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .responsive-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .responsive-table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+    margin-right: 1rem;
+    color: #555;
+    white-space: nowrap; /* evita che l'etichetta vada a capo */
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  /* --- stili già esistenti per responsive-table --- */
+
+  /* tfoot: nasconde le celle vuote e mostra solo Totale + importo */
+  .responsive-tfoot-empty {
+    display: none;
+  }
+
+  .responsive-tfoot-label {
+    display: block;
+    text-align: left !important;
+  }
+
+  .responsive-tfoot-value {
+    display: block;
+  }
+}
