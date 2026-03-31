@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import Select from 'react-select';
 
@@ -10,7 +9,12 @@ export default function AddPractice() {
         banca: '',
         importo: '',
         tipologia: '',
-        stato: ''
+        stato: '',
+        data_acquisizione: '',
+        data_delibera: '',
+        data_erogazione: '',
+        data_fattura: '',
+        numero_fattura: ''
     });
     const [clienti, setClienti] = useState([]);
 
@@ -24,7 +28,6 @@ export default function AddPractice() {
                 console.error(err);
             }
         }
-
         fetchClients();
     }, []);
 
@@ -34,25 +37,31 @@ export default function AddPractice() {
             [e.target.name]: e.target.value
         })
     }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         const response = await fetch('http://localhost:5000/pratiche', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
 
         const data = await response.json()
         console.log(data)
+
+        // reset solo i campi obbligatori se vuoi
         setFormData({
             cliente_id: '',
             banca: '',
             importo: '',
             tipologia: '',
-            stato: ''
+            stato: '',
+            data_acquisizione: '',
+            data_delibera: '',
+            data_erogazione: '',
+            data_fattura: '',
+            numero_fattura: ''
         })
 
         navigate('/pratiche');
@@ -65,6 +74,7 @@ export default function AddPractice() {
                 <div className="row w-100 justify-content-center">
                     <div className="col-11 col-md-5">
                         <form onSubmit={handleSubmit}>
+                            {/* Cliente */}
                             <div className="mb-3">
                                 <label className="form-label fw-bold">Cliente</label>
                                 <Select
@@ -74,54 +84,38 @@ export default function AddPractice() {
                                         label: clienti.find(c => c.id === formData.cliente_id).ragioneSociale
                                     } : null}
                                     onChange={(selectedOption) => {
-                                        setFormData({
-                                            ...formData,
-                                            cliente_id: selectedOption ? selectedOption.value : ''
-                                        })
+                                        setFormData({ ...formData, cliente_id: selectedOption ? selectedOption.value : '' })
                                     }}
                                     placeholder="Seleziona cliente..."
                                     isClearable
                                 />
                             </div>
+
+                            {/* Banca */}
                             <div className="mb-3">
                                 <label htmlFor="banca" className="form-label fw-bold">Banca</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="banca"
-                                    aria-describedby="banca"
-                                    name="banca"
-                                    // value={ragioneSociale}
-                                    onChange={handleChange} />
+                                <input type="text" className="form-control" id="banca" name="banca"
+                                    value={formData.banca} onChange={handleChange} />
                             </div>
+
+                            {/* Importo */}
                             <div className="mb-3">
                                 <label htmlFor="importo" className="form-label fw-bold">Importo</label>
-                                <input
-                                    type="number"
-                                    className="form-control"
-                                    id="importo"
-                                    aria-describedby="importo"
-                                    name="importo"
-                                    onChange={handleChange} />
+                                <input type="number" className="form-control" id="importo" name="importo"
+                                    value={formData.importo} onChange={handleChange} />
                             </div>
+
+                            {/* Tipologia */}
                             <div className="mb-3">
                                 <label htmlFor="tipologia" className="form-label fw-bold">Tipologia</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="tipologia"
-                                    aria-describedby="tipologia"
-                                    name="tipologia"
-                                    onChange={handleChange} />
+                                <input type="text" className="form-control" id="tipologia" name="tipologia"
+                                    value={formData.tipologia} onChange={handleChange} />
                             </div>
+
+                            {/* Stato */}
                             <div className="mb-3">
                                 <label htmlFor="stato" className="form-label fw-bold">Stato</label>
-                                <select
-                                    name="stato"
-                                    value={formData.stato}
-                                    onChange={handleChange}
-                                    className="form-select"
-                                >
+                                <select name="stato" value={formData.stato} onChange={handleChange} className="form-select">
                                     <option value="">Seleziona stato</option>
                                     <option value="In lavorazione">In lavorazione</option>
                                     <option value="Erogata">Erogata</option>
@@ -129,6 +123,36 @@ export default function AddPractice() {
                                     <option value="Deliberata">Deliberata</option>
                                 </select>
                             </div>
+
+                            {/* Date opzionali */}
+                            <div className="mb-3">
+                                <label className="form-label fw-bold">Data Acquisizione</label>
+                                <input type="date" className="form-control" name="data_acquisizione" 
+                                    value={formData.data_acquisizione} onChange={handleChange} />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label fw-bold">Data Delibera</label>
+                                <input type="date" className="form-control" name="data_delibera" 
+                                    value={formData.data_delibera} onChange={handleChange} />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label fw-bold">Data Erogazione</label>
+                                <input type="date" className="form-control" name="data_erogazione" 
+                                    value={formData.data_erogazione} onChange={handleChange} />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label fw-bold">Data Fattura</label>
+                                <input type="date" className="form-control" name="data_fattura" 
+                                    value={formData.data_fattura} onChange={handleChange} />
+                            </div>
+
+                            {/* Numero Fattura */}
+                            <div className="mb-3">
+                                <label className="form-label fw-bold">Numero Fattura</label>
+                                <input type="text" className="form-control" name="numero_fattura" 
+                                    value={formData.numero_fattura} onChange={handleChange} />
+                            </div>
+
                             <button type="submit" className="btn btn-success bg-a px-5 fw-bold text-dark">Crea Pratica</button>
                         </form>
                     </div>

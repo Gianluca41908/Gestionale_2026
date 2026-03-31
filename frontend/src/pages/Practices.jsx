@@ -104,6 +104,7 @@ export default function Practices() {
         if (sortField !== field) return '';
         return sortOrder === 'asc' ? ' ▲' : ' ▼';
     };
+    console.log(sortedPractices);
 
     return (
         <>
