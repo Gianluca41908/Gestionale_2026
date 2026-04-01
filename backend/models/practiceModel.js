@@ -21,6 +21,19 @@ const getAllPractices = (callback) => {
     db.query(sql, callback)
 }
 
+const getPracticeById = (id, callback) => {
+    const sql = `
+        SELECT 
+            pratiche.*,
+            clienti.ragioneSociale
+        FROM pratiche
+        JOIN clienti ON pratiche.cliente_id = clienti.id
+        WHERE pratiche.id = ?
+    `;
+
+    db.query(sql, [id], callback);
+};
+
 // CREATE pratica
 const createPractice = (pratica, callback) => {
     const { cliente_id, importo, banca, tipologia, stato,
@@ -88,5 +101,6 @@ module.exports = {
     getAllPractices,
     createPractice,
     updatePractice,
-    deletePractice
+    deletePractice,
+    getPracticeById
 }

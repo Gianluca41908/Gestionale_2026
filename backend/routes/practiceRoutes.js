@@ -5,6 +5,9 @@ const practiceController = require('../controllers/practiceController')
 // GET
 router.get('/pratiche', practiceController.getPractices)
 
+// GET
+router.get('/pratiche/:id', practiceController.getPracticeById);
+
 // POST
 router.post('/pratiche', practiceController.createPractice)
 

@@ -40,6 +40,9 @@ export default function Practices() {
         if (sortField === 'importo') {
             aField = Number(aField);
             bField = Number(bField);
+        } else if (sortField === 'data_acquisizione') {
+            aField = aField ? new Date(aField) : new Date(0);
+            bField = bField ? new Date(bField) : new Date(0);
         } else if (typeof aField === 'string') {
             aField = aField.toLowerCase();
             bField = bField.toLowerCase();
@@ -101,10 +104,16 @@ export default function Practices() {
     };
 
     const getSortIcon = (field) => {
-        if (sortField !== field) return '';
-        return sortOrder === 'asc' ? ' ▲' : ' ▼';
+    if (sortField !== field) return ' ⇅'; // icona neutra
+    return sortOrder === 'asc' ? ' ▲' : ' ▼';
+};
+
+    // console.log(sortedPractices);
+
+    const formatDate = (date) => {
+        if (!date) return '-';
+        return new Date(date).toLocaleDateString('it-IT');
     };
-    console.log(sortedPractices);
 
     return (
         <>
@@ -170,6 +179,9 @@ export default function Practices() {
                             <th style={{ cursor: 'pointer' }} onClick={() => handleSort('stato')}>
                                 Stato{getSortIcon('stato')}
                             </th>
+                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('data_acquisizione')}>
+                                Acquisizione{getSortIcon('data_acquisizione')}
+                            </th>
                             <th>Azioni</th>
                         </tr>
                     </thead>
@@ -184,11 +196,14 @@ export default function Practices() {
                                 </td>
                                 <td data-label="Tipologia">{practice.tipologia}</td>
                                 <td data-label="Stato">{getStatoBadge(practice.stato)}</td>
+                                <td data-label="Acquisizione">
+                                    {formatDate(practice.data_acquisizione)}
+                                </td>
                                 <td data-label="Azioni">
                                     <div className="d-flex justify-content-center gap-2">
                                         <button onClick={() => handleEdit(practice)} className="btn btn-sm btn-primary">✏️</button>
                                         <button onClick={() => handleDelete(practice.id)} className="btn btn-sm btn-danger">🗑</button>
-                                        <button className="btn btn-sm btn-secondary">📂</button>
+                                        <button onClick={() => navigate(`/pratiche/${practice.id}`)} className="btn btn-sm btn-secondary">📂</button>
                                     </div>
                                 </td>
                             </tr>
@@ -201,7 +216,7 @@ export default function Practices() {
                             <td className="fw-bold responsive-tfoot-value">
                                 € {totaleImporti.toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                             </td>
-                            <td colSpan="3" className="responsive-tfoot-empty"></td>
+                            <td colSpan="4" className="responsive-tfoot-empty"></td>
                         </tr>
                     </tfoot>
                 </table>

@@ -10,6 +10,20 @@ const getPractices = (req, res) => {
     })
 }
 
+const getPracticeById = (req, res) => {
+    const { id } = req.params;
+
+    practiceModel.getPracticeById(id, (err, results) => {
+        if (err) return res.status(500).json(err);
+
+        if (results.length === 0) {
+            return res.status(404).json({ message: 'Pratica non trovata' });
+        }
+
+        res.json(results[0]);
+    });
+};
+
 // CREATE pratica
 const createPractice = (req, res) => {
     const statiValidi = ['In lavorazione', 'Erogata', 'Fatturata', 'Deliberata']
@@ -68,5 +82,6 @@ module.exports = {
     getPractices,
     createPractice,
     updatePractice,
-    deletePractice
+    deletePractice,
+    getPracticeById
 }

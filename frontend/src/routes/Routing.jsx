@@ -7,6 +7,7 @@ import Practices from "../pages/Practices";
 import AddPractice from "../pages/AddPractice";
 import EditClient from "../pages/EditClient";
 import EditPractice from "../pages/EditPractice";
+import PracticeDetail from "../pages/PracticeDetail";
 
 export default function Routing() {
     return (
@@ -19,6 +20,7 @@ export default function Routing() {
                 <Route path="/pratiche" element={<Practices />} />
                 <Route path="/add-practice" element={<AddPractice />} />
                 <Route path="/edit-practice" element={<EditPractice />} />
+                <Route path="pratiche/:id" element={<PracticeDetail />} />  
             </Route>
         </Routes>
     )
