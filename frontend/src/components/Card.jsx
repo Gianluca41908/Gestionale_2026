@@ -1,6 +1,6 @@
 export default function Card({ title, amount, perc, icon, color }) {
     return (
-        <div className="card my-card" style={{borderColor: `${color}`}}>
+        <div className="card my-card border-p" style={{borderColor: `${color}`}}>
             <div className="card-body d-flex justify-content-evenly">
                 <div className="text-container">
                     <h3>€ {(amount || 0).toLocaleString('it-IT', { minimumFractionDigits: 2 })}</h3>

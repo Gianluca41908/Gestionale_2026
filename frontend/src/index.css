@@ -1,12 +1,12 @@
 
 :root {
   /* Primary (Black) */
-  --color-primary: #0b0b0f;
+  --color-primary: #5a7aaa;
 
   /* Secondary (Verdone) */
-  --color-accent: rgb(50, 255, 47);
+  --color-accent: #0f2952;
 
-  --color-secondary:rgba(50, 255, 47, 0.63);
+  --color-secondary:#eef3fb;
 
 }
 
@@ -36,6 +36,9 @@
   background-color: var(--color-secondary);
 }
 
+.border-p{
+  border-color: var(--color-primary) !important;
+}
 
 
 /* FONT */
@@ -55,11 +58,17 @@
 .my-card {
   /* background-color: transparent; */
   background-color: var(--color-accent);
-  background-color: rgba(50, 255, 47, 0.63);
+  background-color: white;
   border-radius: 20px;
   height: 180px;
-  border: 3px solid;
+  border: 2px solid;
   /* background-color: white; */
+}
+
+@media (max-width: 767.98px) {
+  .my-card{
+  height: 150px;
+}
 }
 
 .icon-container {
@@ -107,6 +116,10 @@
     background: rgba(0, 0, 0, 0.737);
     z-index: 900; /* sotto la sidebar */
   }
+}
+
+.sidebarBorder {
+  border: 1px solid #5a7aaa;
 }
 
 /* TABELLE */

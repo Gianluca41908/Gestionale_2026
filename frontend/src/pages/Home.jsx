@@ -12,8 +12,8 @@ import Card from "../components/Card";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Home() {
-    const [practices, setPractices] = useState([]);   
-    
+    const [practices, setPractices] = useState([]);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -84,10 +84,12 @@ export default function Home() {
 
     return (
         <div className=" min-vh-100">
-            <h1 className="text-center pt-3">Dashboard</h1>
+            <div className="bg-white border-bottom border-2 border-p mb-5">
+                <h1 className="text-center text-a pt-2 pb-2">Dashboard</h1>
+            </div>
             <div className="container mt-5">
                 <div className="row justify-content-between gy-3">
-                    <div className="col-12 col-md-6  rounded-5 d-flex justify-content-center align-items-center">
+                    <div className="col-12 col-md-6 rounded-5 d-flex justify-content-center align-items-center">
                         <div className="row gy-3">
                             {/* In lavorazione */}
                             <div className="col-md-6">
@@ -111,7 +113,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="col-12 col-md-4 ">
-                        <div className="card-body">
+                        <div className="border border-2 rounded-5 border-p p-3 bg-white">
                             {/* <h5 className="text-center mb-4">Distribuzione pratiche</h5> */}
                             <Pie data={dataChart} options={optionsChart} />
                         </div>
@@ -120,7 +122,7 @@ export default function Home() {
                 </div>
             </div>
 
-        
+
         </div>
     )
 }

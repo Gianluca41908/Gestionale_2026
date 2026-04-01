@@ -43,7 +43,9 @@ export default function AddClient() {
 
     return (
         <>
-            <h1 className="text-center pt-5">Aggiungi Cliente</h1>
+            <div className="bg-white border-bottom border-2 border-p mb-3 mb-md-5">
+                <h1 className="text-center text-a pt-2 pb-2">Crea Cliente</h1>
+            </div>
             <div className="container-fluid mt-5">
                 <div className="row w-100 justify-content-center">
                     <div className="col-11 col-md-5">
@@ -89,7 +91,7 @@ export default function AddClient() {
                                     name="sedeLegale"
                                     onChange={handleChange} />
                             </div>
-                            <button type="submit" className="btn btn-success bg-a px-5">Crea Cliente</button>
+                            <button type="submit" className="p-2 rounded-3 bg-a border-p text-white fw-bold px-5">Crea Cliente</button>
                         </form>
                     </div>
                 </div>

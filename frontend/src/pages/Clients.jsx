@@ -75,7 +75,9 @@ export default function Clients() {
                 )}
             </div>
 
-            <h1 className="text-center pt-5">Clienti</h1>
+            <div className="bg-white border-bottom border-2 border-p mb-3 mb-md-5">
+                <h1 className="text-center text-a pt-2 pb-2">Clienti</h1>
+            </div>
 
             <input
                 type="text"

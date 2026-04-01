@@ -130,7 +130,9 @@ export default function Practices() {
                 )}
             </div>
 
-            <h1 className="text-center pt-5 mb-5">Pratiche</h1>
+            <div className="bg-white border-bottom border-2 border-p mb-3 mb-md-5">
+                <h1 className="text-center text-a pt-2 pb-2">Pratiche</h1>
+            </div>
 
             <div className="container">
                 <div className="d-flex gap-3 mb-3 justify-content-center flex-wrap">
