@@ -159,8 +159,6 @@
 
 @media (max-width: 767.98px) {
 
-  /* --- stili già esistenti per responsive-table --- */
-
   /* tfoot: nasconde le celle vuote e mostra solo Totale + importo */
   .responsive-tfoot-empty {
     display: none;

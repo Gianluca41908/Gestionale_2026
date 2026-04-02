@@ -104,9 +104,9 @@ export default function Practices() {
     };
 
     const getSortIcon = (field) => {
-    if (sortField !== field) return ' ⇅'; // icona neutra
-    return sortOrder === 'asc' ? ' ▲' : ' ▼';
-};
+        if (sortField !== field) return ' ⇅'; // icona neutra
+        return sortOrder === 'asc' ? ' ▲' : ' ▼';
+    };
 
     // console.log(sortedPractices);
 
@@ -135,7 +135,7 @@ export default function Practices() {
             </div>
 
             <div className="container">
-                <div className="d-flex gap-3 mb-3 justify-content-center flex-wrap">
+                <div className="d-flex gap-3 mb-5 justify-content-center flex-wrap">
                     <input
                         type="text"
                         placeholder="Cerca cliente..."
@@ -161,6 +161,18 @@ export default function Practices() {
                         onChange={(e) => setFilterBanca(e.target.value)}
                         className="form-control w-auto"
                     />
+                    <button
+                        className="p-2 rounded-3 bg-a border-p text-white fw-bold px-2"
+                        onClick={() => {
+                            setSearchCliente('');
+                            setFilterStato('');
+                            setFilterBanca('');
+                            setSortField('');
+                            setSortOrder('asc');
+                        }}
+                    >
+                        🧹 Reset filtri e ordinamento
+                    </button>
                 </div>
 
                 <table className="table table-hover table-bordered text-center align-middle responsive-table">
