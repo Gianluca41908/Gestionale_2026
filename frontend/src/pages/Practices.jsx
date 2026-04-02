@@ -175,28 +175,28 @@ export default function Practices() {
                     </button>
                 </div>
 
-                <table className="table table-hover table-bordered text-center align-middle responsive-table">
-                    <thead className="table-dark">
+                <table className="table table-hover table-bordered border-p text-center align-middle responsive-table">
+                    <thead className="table-dark border-p">
                         <tr>
-                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('ragioneSociale')}>
+                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('ragioneSociale')} className="bg-a">
                                 Cliente{getSortIcon('ragioneSociale')}
                             </th>
-                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('banca')}>
+                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('banca')} className="bg-a">
                                 Banca{getSortIcon('banca')}
                             </th>
-                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('importo')}>
+                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('importo')} className="bg-a">
                                 Importo{getSortIcon('importo')}
                             </th>
-                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('tipologia')}>
+                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('tipologia')} className="bg-a">
                                 Tipologia{getSortIcon('tipologia')}
                             </th>
-                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('stato')}>
+                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('stato')} className="bg-a">
                                 Stato{getSortIcon('stato')}
                             </th>
-                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('data_acquisizione')}>
+                            <th style={{ cursor: 'pointer' }} onClick={() => handleSort('data_acquisizione')} className="bg-a">
                                 Acquisizione{getSortIcon('data_acquisizione')}
                             </th>
-                            <th>Azioni</th>
+                            <th className="bg-a">Azioni</th>
                         </tr>
                     </thead>
 
@@ -225,12 +225,12 @@ export default function Practices() {
                     </tbody>
 
                     <tfoot>
-                        <tr className="table-dark">
-                            <td colSpan="2" className="fw-bold text-end responsive-tfoot-label">Totale:</td>
-                            <td className="fw-bold responsive-tfoot-value">
+                        <tr className="table-dark border-p">
+                            <td colSpan="2" className="fw-bold text-end responsive-tfoot-label bg-a">Totale:</td>
+                            <td className="fw-bold responsive-tfoot-value bg-a">
                                 € {totaleImporti.toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                             </td>
-                            <td colSpan="4" className="responsive-tfoot-empty"></td>
+                            <td colSpan="4" className="responsive-tfoot-empty bg-a"></td>
                         </tr>
                     </tfoot>
                 </table>

@@ -85,6 +85,8 @@ export default function AddPractice() {
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">Cliente</label>
                                         <Select
+                                            className="react-select"
+                                            classNamePrefix="react-select"
                                             options={clienti.map(c => ({ value: c.id, label: c.ragioneSociale }))}
                                             value={clienti.find(c => c.id === formData.cliente_id) ? {
                                                 value: formData.cliente_id,

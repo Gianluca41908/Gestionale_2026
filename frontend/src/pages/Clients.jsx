@@ -84,18 +84,18 @@ export default function Clients() {
                 placeholder="Cerca cliente..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="my-input mx-auto my-4 form-control d-block"
+                className="my-input mx-auto my-4 mb-5 form-control d-block"
             />
 
             <div className="container">
-                <table className="table table-hover table-bordered text-center align-middle responsive-table">
-                    <thead className="table-dark">
+                <table className="table table-hover table-bordered text-center align-middle responsive-table border-p">
+                    <thead className="table-dark border-p">
                         <tr>
-                            <th>Ragione Sociale</th>
-                            <th>P.IVA</th>
-                            <th>ATECO</th>
-                            <th>Sede Legale</th>
-                            <th>Azioni</th>
+                            <th className="bg-a">Ragione Sociale</th>
+                            <th className="bg-a">P.IVA</th>
+                            <th className="bg-a">ATECO</th>
+                            <th className="bg-a">Sede Legale</th>
+                            <th className="bg-a">Azioni</th>
                         </tr>
                     </thead>
                     <tbody>

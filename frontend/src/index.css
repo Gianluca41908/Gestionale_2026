@@ -29,7 +29,7 @@
 }
 
 .bg-a {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent) !important;
 }
 
 .bg-s {
@@ -172,4 +172,19 @@
   .responsive-tfoot-value {
     display: block;
   }
+}
+
+/* INPUT, SELECT, LABEL */
+
+input, select {
+  border-color: var(--color-primary) !important;
+}
+
+.react-select__control {
+  border: 1px solid var(--color-primary) !important;
+}
+
+label {
+  color: var(--color-accent) !important;
+  font-weight: bold;
 }
