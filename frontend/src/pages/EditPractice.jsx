@@ -71,8 +71,10 @@ export default function EditPractice() {
 
     return (
         <>
-            <h1 className="text-center pt-5">Modifica pratica</h1>
-            <div className="container-fluid mt-5">
+            <div className="bg-white border-bottom border-2 border-p mb-3 mb-md-5">
+                <h1 className="text-center text-a pt-2 pb-2">Modifica Pratica</h1>
+            </div>
+            <div className="container-fluid mt-4 mt-md-5">
                 <div className="row w-100 justify-content-center">
                     <div className="col-11 col-md-7">
                         <form onSubmit={handleSubmit}>

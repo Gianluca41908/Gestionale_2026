@@ -135,7 +135,7 @@ export default function Practices() {
             </div>
 
             <div className="container">
-                <div className="d-flex gap-3 mb-5 justify-content-center flex-wrap">
+                <div className="d-flex gap-3 mb-3 mb-md-5 justify-content-center flex-wrap">
                     <input
                         type="text"
                         placeholder="Cerca cliente..."

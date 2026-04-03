@@ -84,7 +84,7 @@ export default function Clients() {
                 placeholder="Cerca cliente..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="my-input mx-auto my-4 mb-5 form-control d-block"
+                className="my-input mx-auto my-4 mb-md-5 form-control d-block"
             />
 
             <div className="container">
