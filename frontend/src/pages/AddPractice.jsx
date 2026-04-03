@@ -174,7 +174,7 @@ export default function AddPractice() {
 
                             {/* Bottone centrato */}
                             <div className="text-center mt-3">
-                                <button type="submit" className="p-2 rounded-3 bg-a border-p text-white fw-bold px-5 mb-5">
+                                <button type="submit" className="mybtn mb-5">
                                     Crea Pratica
                                 </button>
                             </div>

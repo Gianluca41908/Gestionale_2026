@@ -87,7 +87,7 @@ export default function EditClient() {
                                     value={formData.sedeLegale}
                                     onChange={handleChange} />
                             </div>
-                            <button type="submit" className="btn btn-success bg-a px-5">Modifica Cliente</button>
+                            <button type="submit" className="mybtn">Modifica Cliente</button>
                         </form>
                     </div>
                 </div>

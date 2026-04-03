@@ -32,29 +32,90 @@ export default function Header({ open, setOpen }) {
                 {/* Menu */}
                 <ul className="list-unstyled d-flex flex-column gap-3 fs-5 fw-bold">
 
-                    <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'}`}>
-                        <NavLink to="/clienti" className={`text-decoration-none text-p `}>
-                            {open ? <><i className="bi bi-people-fill text-primary"></i> Clienti</> : <i className="bi bi-people-fill text-primary"></i>}
-                        </NavLink>
-                    </li>
+                    {/* HOME */}
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            `text-decoration-none text-p ${isActive ? 'active-link' : ''}`
+                        }
+                    >
+                        {({ isActive }) => (
+                            <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'} ${isActive ? 'bg-p text-a border-s' : 'text-s'}`}>
+                                {open
+                                    ? <><i className="bi bi-house-fill"></i> Home</>
+                                    : <i className="bi bi-house-fill"></i>
+                                }
+                            </li>
+                        )}
+                    </NavLink>
 
-                    <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'}`}>
-                        <NavLink to="/pratiche" className="text-decoration-none text-p">
-                            {open ? <><i className="bi bi-folder-fill text-warning"></i> Pratiche</> : <i className="bi bi-folder-fill text-warning"></i>}
-                        </NavLink>
-                    </li>
+                    {/* CLIENTI */}
+                    <NavLink
+                        to="/clienti"
+                        className={({ isActive }) =>
+                            `text-decoration-none text-p ${isActive ? 'active-link' : ''}`
+                        }
+                    >
+                        {({ isActive }) => (
+                            <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'} ${isActive ? 'bg-p text-a border-s' : 'text-s'}`}>
+                                {open
+                                    ? <><i className="bi bi-people-fill"></i> Clienti</>
+                                    : <i className="bi bi-people-fill"></i>
+                                }
+                            </li>
+                        )}
+                    </NavLink>
 
-                    <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'}`}>
-                        <NavLink to="/add-client" className="text-decoration-none text-p">
-                            {open ? <><i className="bi bi-person-fill-add text-primary"></i> Crea Cliente</> : <i className="bi bi-person-fill-add text-primary"></i>}
-                        </NavLink>
-                    </li>
+                    {/* PRATICHE */}
+                    <NavLink
+                        to="/pratiche"
+                        className={({ isActive }) =>
+                            `text-decoration-none text-p ${isActive ? 'active-link' : ''}`
+                        }
+                    >
+                        {({ isActive }) => (
+                            <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'} ${isActive ? 'bg-p text-a border-s' : 'text-s'}`}>
+                                {open
+                                    ? <><i className="bi bi-folder-fill"></i> Pratiche</>
+                                    : <i className="bi bi-folder-fill"></i>
+                                }
+                            </li>
+                        )}
+                    </NavLink>
 
-                    <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'}`}>
-                        <NavLink to="/add-practice" className="text-decoration-none text-p">
-                            {open ? <><i className="bi bi-folder-plus text-warning"></i> Crea Pratica</> : <i className="bi bi-folder-plus text-warning"></i>}
-                        </NavLink>
-                    </li>
+                    {/* CREA CLIENTE */}
+                    <NavLink
+                        to="/add-client"
+                        className={({ isActive }) =>
+                            `text-decoration-none text-p ${isActive ? 'active-link' : ''}`
+                        }
+                    >
+                        {({ isActive }) => (
+                            <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'} ${isActive ? 'bg-p text-a border-s' : 'text-s'}`}>
+                                {open
+                                    ? <><i className="bi bi-person-fill-add"></i> Crea Cliente</>
+                                    : <i className="bi bi-person-fill-add"></i>
+                                }
+                            </li>
+                        )}
+                    </NavLink>
+
+                    {/* CREA PRATICA */}
+                    <NavLink
+                        to="/add-practice"
+                        className={({ isActive }) =>
+                            `text-decoration-none text-p ${isActive ? 'active-link' : ''}`
+                        }
+                    >
+                        {({ isActive }) => (
+                            <li className={`mb-3 sidebarBorder rounded-3 p-1 ${open ? '' : 'd-flex justify-content-center'} ${isActive ? 'bg-p text-a border-s' : 'text-s'}`}>
+                                {open
+                                    ? <><i className="bi bi-folder-plus"></i> Crea Pratica</>
+                                    : <i className="bi bi-folder-plus"></i>
+                                }
+                            </li>
+                        )}
+                    </NavLink>
 
                 </ul>
             </div>

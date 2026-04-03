@@ -162,7 +162,7 @@ export default function Practices() {
                         className="form-control w-auto"
                     />
                     <button
-                        className="p-2 rounded-3 bg-a border-p text-white fw-bold px-2"
+                        className="mybtn px-2"
                         onClick={() => {
                             setSearchCliente('');
                             setFilterStato('');

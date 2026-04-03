@@ -91,7 +91,7 @@ export default function AddClient() {
                                     name="sedeLegale"
                                     onChange={handleChange} />
                             </div>
-                            <button type="submit" className="p-2 rounded-3 bg-a border-p text-white fw-bold px-5">Crea Cliente</button>
+                            <button type="submit" className="mybtn">Crea Cliente</button>
                         </form>
                     </div>
                 </div>
