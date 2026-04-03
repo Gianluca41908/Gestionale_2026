@@ -83,11 +83,11 @@ export default function Home() {
 
 
     return (
-        <div className=" min-vh-100">
-            <div className="bg-white border-bottom border-2 border-p mb-4 mb-md-5">
+        <div className=" min-vh-100 d-flex flex-column">
+            <div className="bg-white border-bottom border-2 border-p mb-4 mb-md-0">
                 <h1 className="text-center text-a pt-2 pb-2">Dashboard</h1>
             </div>
-            <div className="container mt-1 mt-md-5 mb-5">
+            <div className="container  flex-grow-1 d-flex justify-content-center align-items-center mb-4 mb-md-0">
                 <div className="row justify-content-evenly gy-3">
                     <div className="col-12 col-md-6 rounded-5 d-flex justify-content-center align-items-center">
                         <div className="row gy-3">
